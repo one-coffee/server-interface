@@ -1,0 +1,15 @@
+{{#modal-dialog translucentOverlay=true}}
+    <div>
+        <h1>Please sign in</h1>
+        <form role="form" {{action "authenticate" on="submit"}}>
+            {{if errorMessage errorMessage}}
+            <div class="form-group">
+                {{input value=email placeholder="Email address" class="form-control"}}
+            </div>
+            <div class="form-group">
+                {{input value=password placeholder="Password" class="form-control"}}
+            </div>
+            <button type="submit" class="btn btn-default">Submit Button</button>
+        </form>
+    </div>
+{{/modal-dialog}}
