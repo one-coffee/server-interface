@@ -1,0 +1,7 @@
+Node index: {{model.name}}
+{{#each logs as |log|}}
+    <div>{{log.id}} - {{log.message}}</div>
+{{else}}
+    <div>Sorry, but no logs were found.</div>
+{{/each}}
+

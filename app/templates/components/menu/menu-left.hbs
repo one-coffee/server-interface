@@ -1,0 +1,25 @@
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav side-nav">
+        <li class="active">
+            {{#link-to 'index'}}
+                <i class="fa fa-fw fa-dashboard"></i> Dashboard
+            {{/link-to}}
+        </li>
+        <li>
+            <a {{action 'toggleNodes'}}><i class="fa fa-fw fa-arrows-v">
+                </i> Nodes <i class="fa fa-fw fa-caret-down"></i>
+            </a>
+            {{#bs-collapse collapsed=collapsedNodes tagName='ul'}}
+                {{#each nodes as |node|}}
+                    <li>
+                        {{#link-to 'node' node}}
+                            <i class="fa fa-fw fa-table"></i>{{node.name}}
+                        {{/link-to}}
+                    </li>
+                {{else}}
+                    <li>Sorry, no nodes were loaded.</li>
+                {{/each}}
+            {{/bs-collapse}}
+        </li>
+    </ul>
+</div>
