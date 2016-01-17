@@ -1,7 +1,35 @@
-Node index: {{model.name}}
-{{#each logs as |log|}}
-    <div>{{log.id}} - {{log.message}}</div>
-{{else}}
-    <div>Sorry, but no logs were found.</div>
-{{/each}}
-
+<div class="col-lg-12">
+    <h2>List of logs from <b>{{capitalize model.name}}</b></h2>
+    <div class="table-responsive">
+        <table class="table table-hover log-table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Severity</th>
+                <th>Message</th>
+                <th>Context</th>
+                <th>Received</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each sortedLogs as |log|}}
+                <tr class="severity-{{log.severity}}">
+                    <td>{{log.id}}</td>
+                    <td>{{log.severity}}</td>
+                    <td>{{log.message}}</td>
+                    <td>{{log.context}}</td>
+                    {{#if log.clientCreatedAt}}
+                        <td title="Sent at {{moment-date log.clientCreatedAt}}">{{moment-date log.createdAt}}</td>
+                    {{else}}
+                        <td title="Server time has not been sent with this request.">{{moment-date log.createdAt}}</td>
+                    {{/if}}
+                </tr>
+            {{else}}
+                <tr>
+                    <td colspan="6">Sorry, but no logs were found.</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

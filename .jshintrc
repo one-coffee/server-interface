@@ -6,6 +6,7 @@
     "autosize",
     "moment",
     "Cookies",
+    "moment",
     "performance"
   ],
   "browser": true,
