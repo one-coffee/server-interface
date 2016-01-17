@@ -6,10 +6,11 @@
             {{/link-to}}
         </li>
         <li>
-            <a {{action 'toggleNodes'}}><i class="fa fa-fw fa-arrows-v"></i>
+            {{#link-to 'nodes'}}
+                <i class="fa fa-fw fa-arrows-v"></i>
                 Nodes <i class="fa fa-fw fa-caret-down"></i>
-            </a>
-            {{#bs-collapse collapsed=collapsedNodes tagName='ul'}}
+            {{/link-to}}
+            <ul>
                 {{#each nodes as |node|}}
                     <li>
                         {{#link-to 'node' node}}
@@ -19,10 +20,10 @@
                 {{else}}
                     <li>Sorry, no nodes were loaded.</li>
                 {{/each}}
-            {{/bs-collapse}}
+            </ul>
         </li>
         <li>
-            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin">Template</a>
+            <a href="http://ironsummitmedia.github.io/startbootstrap-sb-admin" target="_blank">Template</a>
         </li>
     </ul>
 </div>

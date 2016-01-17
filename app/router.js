@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('index', {path: '/:node_id'});
   });
   this.route('login');
+  this.route('nodes', function() {});
 });
 
 export default Router;

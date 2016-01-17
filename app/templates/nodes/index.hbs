@@ -1,0 +1,30 @@
+<div class="col-lg-12">
+    <div {{action 'createNewNode'}}>Add new node</div>
+    <h2>List of nodes.</h2>
+    <div class="table-responsive">
+        <table class="table table-hover log-table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Hash</th>
+                <th>Created</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each sortedNodes as |node|}}
+                <tr {{action 'open' node}} class="cursor-pointer">
+                    <td>{{node.id}}</td>
+                    <td>{{capitalize node.name}}</td>
+                    <td><code>{{shorten node.hash 32 true}}</code></td>
+                    <td>{{moment-date node.createdAt}}</td>
+                </tr>
+            {{else}}
+                <tr>
+                    <td colspan="4">Sorry, but no logs were found.</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
