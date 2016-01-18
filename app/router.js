@@ -8,8 +8,8 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('index', {resetNamespace: true, path: '/'});
   this.route('skeleton', {resetNamespace: true, path: '/skeleton'});
-  this.route('node', function() {
-    this.route('index', {path: '/:node_id'});
+  this.route('node', {path: '/node/:node_id'}, function() {
+    this.route('logs', {path: '/logs'});
   });
   this.route('login');
   this.route('nodes', function() {});
