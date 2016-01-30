@@ -7,6 +7,9 @@
   "disallowSpacesInAnonymousFunctionExpression": {
     "beforeOpeningRoundBrace": true
   },
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
   "requireDotNotation": null,
   "requirePaddingNewLinesBeforeLineComments": null,
   "requireCamelCaseOrUpperCaseIdentifiers": null,
